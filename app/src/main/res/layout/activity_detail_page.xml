@@ -8,7 +8,7 @@
     tools:context=".HomePageActivity">
 
     <TextView
-        android:id="@+id/textView11"
+        android:id="@+id/api_overview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -16,59 +16,47 @@
         android:fontFamily="@font/montserrat"
         android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView8"
+        app:layout_constraintTop_toBottomOf="@+id/tv_overview"
         tools:text="Overview" />
 
     <TextView
-        android:id="@+id/textView10"
+        android:id="@+id/api_genre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="98dp"
         android:layout_marginTop="20dp"
         android:fontFamily="@font/montserrat"
         android:textColor="@color/white"
-        app:layout_constraintStart_toEndOf="@+id/textView9"
-        app:layout_constraintTop_toBottomOf="@+id/textView7"
+        app:layout_constraintStart_toEndOf="@+id/tv_genre"
+        app:layout_constraintTop_toBottomOf="@+id/api_language"
         tools:text="Genre" />
 
     <TextView
-        android:id="@+id/textView9"
+        android:id="@+id/api_language"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="70dp"
         android:layout_marginTop="16dp"
-        android:fontFamily="@font/montserrat_bold"
+        android:fontFamily="@font/montserrat"
         android:textColor="@color/white"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4"
-        tools:text="Genre" />
+        app:layout_constraintStart_toEndOf="@+id/tv_language"
+        app:layout_constraintTop_toBottomOf="@+id/api_releasedate"
+        tools:text="Language" />
 
     <TextView
-        android:id="@+id/textView8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="72dp"
-        android:fontFamily="@font/montserrat_bold"
-        android:textColor="@color/white"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4"
-        tools:text="Overview" />
-
-    <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/api_releasedate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="48dp"
         android:layout_marginTop="16dp"
         android:fontFamily="@font/montserrat"
         android:textColor="@color/white"
-        app:layout_constraintStart_toEndOf="@+id/textView3"
-        app:layout_constraintTop_toBottomOf="@+id/textView5"
+        app:layout_constraintStart_toEndOf="@+id/tv_releasedate"
+        app:layout_constraintTop_toBottomOf="@+id/api_title"
         tools:text="Release Date" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/api_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="108dp"
@@ -76,24 +64,24 @@
         android:fontFamily="@font/montserrat"
         android:textColor="@color/white"
         android:textSize="14sp"
-        app:layout_constraintStart_toEndOf="@+id/textView2"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2"
+        app:layout_constraintStart_toEndOf="@+id/tv_title"
+        app:layout_constraintTop_toBottomOf="@+id/iv_poster"
         tools:text="Title" />
 
     <TextView
-        android:id="@+id/textView7"
+        android:id="@+id/tv_overview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="70dp"
-        android:layout_marginTop="16dp"
-        android:fontFamily="@font/montserrat"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="72dp"
+        android:fontFamily="@font/montserrat_bold"
         android:textColor="@color/white"
-        app:layout_constraintStart_toEndOf="@+id/textView4"
-        app:layout_constraintTop_toBottomOf="@+id/textView6"
-        tools:text="Language" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_language"
+        tools:text="Overview" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/tv_genre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -101,11 +89,35 @@
         android:fontFamily="@font/montserrat_bold"
         android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3"
+        app:layout_constraintTop_toBottomOf="@+id/tv_language"
+        tools:text="Genre" />
+
+    <TextView
+        android:id="@+id/tv_language"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/montserrat_bold"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_releasedate"
         tools:text="Language" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/tv_releasedate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/montserrat_bold"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title"
+        tools:text="Release Date" />
+
+    <TextView
+        android:id="@+id/tv_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -114,11 +126,11 @@
         android:textColor="@color/white"
         android:textSize="14sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2"
+        app:layout_constraintTop_toBottomOf="@+id/iv_poster"
         tools:text="Title" />
 
-    <ImageView
-        android:id="@+id/imageView"
+    <iv_bgposter
+        android:id="@+id/iv_bgposter"
         android:layout_width="0dp"
         android:layout_height="175dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -126,8 +138,8 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:srcCompat="@tools:sample/avatars" />
 
-    <ImageView
-        android:id="@+id/imageView2"
+    <iv_bgposter
+        android:id="@+id/iv_poster"
         android:layout_width="127dp"
         android:layout_height="166dp"
         android:layout_marginStart="16dp"
@@ -135,17 +147,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:srcCompat="@tools:sample/avatars" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:fontFamily="@font/montserrat_bold"
-        android:textColor="@color/white"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
-        tools:text="Release Date" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
