@@ -22,7 +22,7 @@ class MovieAdapter(val results : ArrayList<MovieModel.Result>, val listener: OnA
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val result = results[position]
         holder.view.tv_title_home.text = result.title
-        Log.d("MainAdapter", "result.image: ${result.image}")
+        Log.d("MovieAdapter", "result.image: ${result.image}")
         Glide.with(holder.view)
             .load(result.image)
             .centerCrop()
