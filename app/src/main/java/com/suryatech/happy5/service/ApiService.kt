@@ -7,7 +7,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 object ApiService {
 
-    val BASE_URL: String = ""
+    val BASE_URL: String = "http://api.themoviedb.org/3/movie/"
     val endpoint: ApiEP
         get() {
 
