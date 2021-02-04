@@ -4,18 +4,17 @@ import java.io.Serializable
 
 
 class MovieModel : Serializable {
-    var id = 0
-    var title: String? = null
-    var overview: String? = null
-    var releaseDate: String? = null
-    var posterPath: String? = null
-    var backdropPath: String? = null
+    var Id = 0
+    lateinit var Title: String
+    lateinit var Overview: String
+    lateinit var ReleaseDate: String
+    lateinit var PosterPath: String
+    lateinit var BackdropPath: String
 
     fun MovieModel() {}
 
     @JvmName("getId1")
     public fun getId(): Int {
-        var Id = id
         return Id
     }
 
@@ -24,9 +23,9 @@ class MovieModel : Serializable {
         var Id = id
     }
 
+
     @JvmName("getTitle1")
-    public fun getTitle(): String? {
-        var Title = title
+    public fun getTitle(): String {
         return Title
     }
 
@@ -36,8 +35,7 @@ class MovieModel : Serializable {
     }
 
     @JvmName("getOverview1")
-    fun getOverview(): String? {
-        var Overview = overview
+    fun getOverview(): String {
         return Overview
     }
 
@@ -47,8 +45,7 @@ class MovieModel : Serializable {
     }
 
     @JvmName("getReleaseDate1")
-    fun getReleaseDate(): String? {
-        var ReleaseDate = releaseDate
+    fun getReleaseDate(): String {
         return ReleaseDate
     }
 
@@ -58,8 +55,7 @@ class MovieModel : Serializable {
     }
 
     @JvmName("getPosterPath1")
-    fun getPosterPath(): String? {
-        var PosterPath = posterPath
+    fun getPosterPath(): String {
         return PosterPath
     }
 
@@ -69,8 +65,7 @@ class MovieModel : Serializable {
     }
 
     @JvmName("getBackdropPath1")
-    fun getBackdropPath(): String? {
-        var BackdropPath = backdropPath
+    fun getBackdropPath(): String {
         return BackdropPath
     }
 

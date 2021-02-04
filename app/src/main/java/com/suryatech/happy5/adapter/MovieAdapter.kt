@@ -7,20 +7,23 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.cardview.widget.CardView
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.suryatech.happy5.R
+import com.suryatech.happy5.R2.id.rv_nowplaying
 import com.suryatech.happy5.model.MovieModel
 import com.suryatech.happy5.service.ApiEndpoint
 import kotlinx.android.synthetic.main.activity_detail_page.view.*
+import kotlinx.android.synthetic.main.activity_home_page.*
 import kotlinx.android.synthetic.main.adapter_movie.view.*
 
 class MovieAdapter(private val mContext: Context, items: List<MovieModel>, xSelectData: onSelectData)
     : RecyclerView.Adapter<MovieAdapter.ViewHolder>() {
 
     private val items: List<MovieModel>
-    private var onSelectedData: onSelectData? = null
-    private val api: ApiEndpoint? = null
+    private var onSelectedData: onSelectData
+    lateinit var api: ApiEndpoint
 
     interface onSelectData {
         fun onSelected(modelMovie: MovieModel?)
@@ -29,6 +32,8 @@ class MovieAdapter(private val mContext: Context, items: List<MovieModel>, xSele
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view: View = LayoutInflater.from(parent.context).inflate(R.layout.adapter_movie, parent, false)
         return ViewHolder(view)
+
+        api = ApiEndpoint()
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
@@ -37,9 +42,9 @@ class MovieAdapter(private val mContext: Context, items: List<MovieModel>, xSele
         holder.tvRealeseDate.setText(data.getReleaseDate())
         holder.tvDesc.setText(data.getOverview())
         Glide.with(mContext)
-                .load(api!!.URLIMAGE + data.getPosterPath())
+                .load(ApiEndpoint.urlimage + data.getPosterPath())
                 .into(holder.imgPhoto)
-        holder.cvFilm.setOnClickListener { onSelectedData!!.onSelected(data) }
+        holder.cvFilm.setOnClickListener { onSelectedData.onSelected(data) }
     }
 
     override fun getItemCount(): Int {
