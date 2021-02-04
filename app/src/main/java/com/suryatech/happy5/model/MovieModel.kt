@@ -1,8 +1,8 @@
 package com.suryatech.happy5.model
 
+@Serializeble
 class MovieModel() {
 
-    @Serializeble
     private var Id = 0
     private var Title: String? = null
     private var Overview: String? = null

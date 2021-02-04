@@ -27,6 +27,10 @@ class MovieAdapter : RecyclerView.Adapter<MovieAdapter.ViewHolder>() {
     private var onSelectedData: MovieAdapter.onSelectData? = null
     private var mContext: Context? = null
 
+    companion object {
+        fun newInstance(): MovieAdapter = MovieAdapter()
+    }
+
     interface onSelectData {
         fun onSelected(modelMovie: MovieModel?)
     }
@@ -62,6 +66,11 @@ class MovieAdapter : RecyclerView.Adapter<MovieAdapter.ViewHolder>() {
 
     override fun getItemCount(): Int {
         return items!!.size
+    }
+
+
+    fun setData(data: List<MovieModel>) {
+        notifyDataSetChanged()
     }
 
 
