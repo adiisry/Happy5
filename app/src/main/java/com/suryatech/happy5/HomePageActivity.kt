@@ -4,7 +4,6 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import butterknife.BindView
 import butterknife.ButterKnife
 import com.suryatech.happy5.adapter.MovieAdapter
 import com.suryatech.happy5.model.Response
@@ -18,7 +17,7 @@ import retrofit2.Callback
 
 class HomePageActivity : AppCompatActivity() {
 
-    lateinit var adapter: MovieAdapter
+    lateinit var Madapter: MovieAdapter
     var API_KEY: String = "7e8f60e325cd06e164799af1e317d7a7"
     var CATEGORY: String = "top_rated"
     var PAGE: Int = 1
@@ -31,24 +30,33 @@ class HomePageActivity : AppCompatActivity() {
         ButterKnife.bind(this)
 
         recyclerView = rv_nowplaying
-        recyclerView.setHasFixedSize(true)
-        recyclerView.layoutManager = LinearLayoutManager(this)
+//        recyclerView.setHasFixedSize(true)
+//        recyclerView.layoutManager = LinearLayoutManager(this)
         api = ApiClient()
+        setupRecyclerView()
         CallRetrofit()
 
     }
 
+    private fun setupRecyclerView() {
+        Madapter = MovieAdapter(arrayListOf<ResultsItem>())
+        recyclerView.apply {
+            layoutManager = LinearLayoutManager (applicationContext)
+            adapter = Madapter
+        }
+    }
+
     fun CallRetrofit() {
-        var apiInterface: ApiInterface
+        val apiInterface: ApiInterface
 
         apiInterface = api.getClient()!!.create(ApiInterface::class.java)
-        var call: Call<Response>
+        val call: Call<Response>
         call = apiInterface.getMovie(CATEGORY, API_KEY, PAGE)
         call.enqueue(object : Callback<Response> {
             override fun onResponse(call: Call<Response>, response: retrofit2.Response<Response>) {
-                var mList: List<ResultsItem>
+                val mList: List<ResultsItem>
                 mList = response.body()!!.results
-                adapter = MovieAdapter(mList)
+                Madapter = MovieAdapter(mList)
                 recyclerView.adapter
             }
 

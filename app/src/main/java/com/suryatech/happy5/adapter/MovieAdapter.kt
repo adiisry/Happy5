@@ -11,20 +11,14 @@ import com.bumptech.glide.Glide
 import com.suryatech.happy5.R
 import com.suryatech.happy5.model.ResultsItem
 
-class MovieAdapter(private var resultList: List<ResultsItem>): RecyclerView.Adapter<MovieAdapter.MyViewHolder>() {
+class MovieAdapter(val resultList: List<ResultsItem>): RecyclerView.Adapter<MovieAdapter.MyViewHolder>() {
 
     lateinit var context: Context
-    lateinit var resultsItem: List<ResultsItem>
-
-    fun MovieAdapter(context: Context?, resultsItem: List<ResultsItem?>?) {
-        this.context = context!!
-        this.resultsItem = resultsItem as List<ResultsItem>
-    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
         context = parent.context
-        val view = layoutInflater.inflate(R.layout.adapter_movie, parent, false)
+        val view = layoutInflater.inflate(R.layout.list_movie, parent, false)
         val viewHolder = MyViewHolder(view)
         return viewHolder
     }
