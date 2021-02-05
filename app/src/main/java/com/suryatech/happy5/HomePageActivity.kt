@@ -17,11 +17,12 @@ import retrofit2.Callback
 
 class HomePageActivity : AppCompatActivity() {
 
-    lateinit var Madapter: MovieAdapter
-    var API_KEY: String = "7e8f60e325cd06e164799af1e317d7a7"
-    var CATEGORY: String = "top_rated"
-    var PAGE: Int = 1
-    lateinit var recyclerView: RecyclerView
+    private lateinit var Madapter: MovieAdapter
+    val CATEGORY: String = "top_rated"
+    val API_KEY: String = "7e8f60e325cd06e164799af1e317d7a7"
+    val LANGUAGE: String = "en-US"
+    val PAGE: Int = 1
+    private lateinit var recyclerView: RecyclerView
     lateinit var api: ApiClient
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -30,7 +31,7 @@ class HomePageActivity : AppCompatActivity() {
         ButterKnife.bind(this)
 
         recyclerView = rv_nowplaying
-//        recyclerView.setHasFixedSize(true)
+        recyclerView.setHasFixedSize(true)
 //        recyclerView.layoutManager = LinearLayoutManager(this)
         api = ApiClient()
         setupRecyclerView()
@@ -51,7 +52,7 @@ class HomePageActivity : AppCompatActivity() {
 
         apiInterface = api.getClient()!!.create(ApiInterface::class.java)
         val call: Call<Response>
-        call = apiInterface.getMovie(CATEGORY, API_KEY, PAGE)
+        call = apiInterface.getMovie(CATEGORY, API_KEY, LANGUAGE, PAGE)
         call.enqueue(object : Callback<Response> {
             override fun onResponse(call: Call<Response>, response: retrofit2.Response<Response>) {
                 val mList: List<ResultsItem>

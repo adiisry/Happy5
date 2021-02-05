@@ -3,6 +3,7 @@ package com.suryatech.happy5.rest
 import com.suryatech.happy5.service.ServiceConfig
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import retrofit2.create
 
 
 class ApiClient {
